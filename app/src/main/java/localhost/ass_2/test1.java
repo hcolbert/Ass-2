@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 public class test1 extends AppCompatActivity {
 //hello this is a comment
+
+    //this is a comment from dom
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
