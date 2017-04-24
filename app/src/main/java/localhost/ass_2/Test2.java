@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class Test2 extends AppCompatActivity {
+    // still testing.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
