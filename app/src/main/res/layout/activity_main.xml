@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/add_task"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
+        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/manage_tasks"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
+        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
@@ -37,9 +37,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="takeQuiz"
         android:text="@string/time_management_questionnaire"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
+        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
@@ -51,13 +52,13 @@
         android:layout_marginTop="16dp"
         android:text="@string/time_management_resources"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
+        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline"
+        android:id="@+id/centre_guideline"
         app:layout_constraintGuide_begin="192dp"
         android:orientation="vertical" />
 </android.support.constraint.ConstraintLayout>
