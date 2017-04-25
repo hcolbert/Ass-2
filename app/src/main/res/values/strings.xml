@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Ass-2</string>
+    <string name="app_name">UTas S.T.M.</string>
+    <string name="add_task">Add Task</string>
+    <string name="manage_tasks">Manage Tasks</string>
+    <string name="time_management_questionnaire">Quiz</string>
+    <string name="time_management_resources">Resources</string>
 </resources>
