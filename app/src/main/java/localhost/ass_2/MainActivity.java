@@ -27,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d("DBTest - table size ", String.valueOf(stmDB.getTableSize()));
     }
 
+    // call the add task activity
+    public void addTask(View view)
+    {
+        Intent intent = new Intent(this, AddTask.class);
+        startActivity(intent);
+    }
+
     // call the quiz activity
     public void takeQuiz(View view){
         Intent intent = new Intent(this,Questionnaire.class);

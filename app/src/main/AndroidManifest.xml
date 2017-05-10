@@ -26,7 +26,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".quiz_section_1"></activity>
+        <activity android:name=".quiz_section_1" />
+        <activity android:name=".AddTask"></activity>
     </application>
 
 </manifest>

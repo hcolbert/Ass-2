@@ -22,4 +22,13 @@
     <string name="button_sometimes">SOMETIMES</string>
     <string name="button_frequently">FREQUENTLY</string>
     <string name="button_always">ALWAYS</string>
+
+    <string name="unit_code_name">Unit Code:</string>
+    <string name="title_name">Title:</string>
+    <string name="provider_name">Provider:</string>
+    <string name="due_date_name">Due Date:</string>
+    <string name="weighting_name">Weighting:</string>
+    <string name="urgency_name">Urgency:</string>
+    <string name="importance_name">Importance:</string>
+
 </resources>
