@@ -68,6 +68,20 @@ public class DbHelper extends SQLiteOpenHelper {
                 + t2column6 + " INTEGER"
                 + ")";
         db.execSQL(createDB);
+
+        createDB = "create table " + table3Name + " ("
+                + t3column1 + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + t3column2 + " INTEGER, "
+                + t3column3 + " STRING, "
+                + t3column4 + " STRING"
+                + t3column5 + " STRING"
+                + t3column6 + " INTEGER"
+                + t3column7 + " INTEGER, "
+                + t3column8 + " INTEGER, "
+                + t3column9 + " STRING"
+                + t3column10 + " STRING"
+                + ")";
+        db.execSQL(createDB);
     }
 
     public void insertData(){
@@ -183,5 +197,305 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return dbCursor.getCount();
     }
+
+    public long addTask(int dueDate, String unitCode, String title, String provider , int assessWeight, int importance, int urgency, String comments, int status){
+
+        long insertResult = 0;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column1, sectionNum);
+        content.put(t3column2, questionNum);
+        content.put(t3column3, questionText);
+        content.put(t3column4, sectionNum);
+        content.put(t3column5, questionNum);
+        content.put(t3column6, questionText);
+        content.put(t3column7, sectionNum);
+        content.put(t3column8, questionNum);
+        content.put(t3column9, questionText);
+        content.put(t3column10, sectionNum);
+
+        insertResult = db.insert(table1Name, null, content);
+        db.close();
+
+        return (insertResult);
+    }
+
+    public int setDueDate(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setUnitCode(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setTitle(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setProvider(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setAssessWeight(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setImportance(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setUrgency(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setComments(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public int setStatus(){
+
+        int result=0;
+
+        return result;
+    }
+
+    public String getTask(int index){
+        return "no data retrieved";
+    }
+
+    public int getDueDate(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column2};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return -1;
+        }
+        else{
+            return dbCursor.getInt(2);
+        }
+    }
+
+    public String getUnitCode(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column3};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return "no data retrieved";
+        }
+        else{
+            return dbCursor.getString(2);
+        }
+    }
+
+    public String getTitle(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column4};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return "no data retrieved";
+        }
+        else{
+            return dbCursor.getString(2);
+        }
+    }
+
+    public String getProvider(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column5};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return "no data retrieved";
+        }
+        else{
+            return dbCursor.getString(2);
+        }
+    }
+
+    public int getAssessWeight(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column6};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return -1;
+        }
+        else{
+            return dbCursor.getInt(2);
+        }
+    }
+
+    public int getImportance(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column7};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return -1;
+        }
+        else{
+            return dbCursor.getInt(2);
+        }
+    }
+
+    public int getUrgency(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column8};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return -1;
+        }
+        else{
+            return dbCursor.getInt(2);
+        }
+    }
+
+    public String getComments(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column9};
+        String queryParams = t1column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table1Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return "no data retrieved";
+        }
+        else{
+            return dbCursor.getString(2);
+        }
+
+    }
+
+    public String getStatus(int index){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] queryColumns = {t3column1, t3column10};
+        String queryParams = t3column1 + " = ?";
+        String[] queryValues = {String.valueOf(index)};
+
+        Cursor dbCursor = db.query(table3Name, queryColumns, queryParams, queryValues, null, null, null, null);
+
+        Log.d("DBTest - row count is ", String.valueOf(dbCursor.getCount()));
+
+        if(dbCursor != null){
+            dbCursor.moveToFirst();
+        }
+
+        if(dbCursor.getCount()==0){
+            return "no data retrieved";
+        }
+        else{
+            return dbCursor.getString(2);
+        }
+
+    }
+
 
 }
