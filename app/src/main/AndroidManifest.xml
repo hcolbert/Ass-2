@@ -16,16 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Test2" />
-        <activity android:name=".test1" />
-        <activity android:name=".Questionnaire"
+        <activity
+            android:name=".Questionnaire"
             android:label="@string/title_questionnaire"
             android:parentActivityName=".MainActivity">
+
             <!-- back navigation support for API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".quiz_section_1"></activity>
     </application>
 
 </manifest>
