@@ -28,6 +28,17 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String t2column5 = "SECTION2";
     public static final String t2column6 = "SECTION3";
 
+    public static final String table3Name = "tasks";
+    public static final String t3column1 = "_id";
+    public static final String t3column2 = "DUEDATE";
+    public static final String t3column3 = "UNITCODE";
+    public static final String t3column4 = "TITLE";
+    public static final String t3column5 = "PROVIDER";
+    public static final String t3column6 = "ASSESSWEIGHT";
+    public static final String t3column7 = "IMPORTANCE";
+    public static final String t3column8 = "URGENCY";
+    public static final String t3column9 = "COMMENTS";
+    public static final String t3column10 = "STATUS";
 
 
 
