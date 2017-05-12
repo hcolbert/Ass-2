@@ -1,15 +1,9 @@
 <resources>
-    <string name="app_name">UTas S.T.M.</string>
-    <string name="add_task">Add Task</string>
-    <string name="manage_tasks">Manage Tasks</string>
-    <string name="time_management_questionnaire">Quiz</string>
-    <string name="time_management_resources">Resources</string>
-    <string name="title_questionnaire">UTas S.T.M. - Questionnaire</string>
     <string name="quiz_blurb">This quiz isbloody fantastic.</string>
-    <string name="tmq_introduction">"Time management is known to play a vital role in improving a students academic performance.  The literature notes that time management behaviours relate positively to perceived control of time, job satisfaction, and health and negatively to stress [Claessens et al., 2007]  This questionnaire is designed to assist you through a basic examination of areas that affect your time management and provides a score on how effectively you manage your time.  There are3 sections (18 questions in total) to the questionnaire.  To make the most of this tool you should aim to complete the questionnaire once a week.  Approximate time to complete: 5 minutes "</string>
+    <string name="tmq_introduction">"Time management is known to play a vital role in improving a students academic performance. The literature notes that time management behaviours relate positively to perceived control of time, job satisfaction, and health and negatively to stress [Claessens et al., 2007] This questionnaire is designed to assist you through a basic examination of areas that affect your time management and provides a score on how effectively you manage your time. There are3 sections (18 questions in total) to the questionnaire.  To make the most of this tool you should aim to complete the questionnaire once a week. Approximate time to complete: 5 minutes "</string>
     <string name="tmq_intro_para_2">This questionnaire is designed to assist you through a basic examination of areas that affect your time management and provides a score on how effectively you manage your time.</string>
-    <string name="tmq_intro_para_1">"Time management is known to play a vital role in improving a students academic performance.  The literature notes that time management behaviours relate positively to perceived control of time, job satisfaction, and health and negatively to stress [Claessens et al., 2007] "</string>
-    <string name="tmq_intro_para_3">There are3 sections (18 questions in total) to the questionnaire.  To make the most of this tool you should aim to complete the questionnaire once a week.</string>
+    <string name="tmq_intro_para_1">"Time management is known to play a vital role in improving a students academic performance. The literature notes that time management behaviours relate positively to perceived control of time, job satisfaction, and health and negatively to stress [Claessens et al., 2007] "</string>
+    <string name="tmq_intro_para_3">There are3 sections (18 questions in total) to the questionnaire. To make the most of this tool you should aim to complete the questionnaire once a week.</string>
     <string name="tmq_intro_para_4">Approximate time to complete: 5 minutes</string>
     <string name="button_start">START</string>
     <string name="button_tmq_db_admin">DB Admin</string>
@@ -23,6 +17,15 @@
     <string name="button_frequently">FREQUENTLY</string>
     <string name="button_always">ALWAYS</string>
 
+    <!--HOME SCREEN STRINGS-->
+    <string name="app_name">UTas S.T.M.</string>
+    <string name="add_task_name">Add Task</string>
+    <string name="manage_tasks_name">Manage Tasks</string>
+    <string name="questionnaire_name">Quiz</string>
+    <string name="resources_name">Learning Resources</string>
+
+    <!--ADD TASK STRINGS-->
+    <string name="add_title">UTas S.T.M. - Add Task</string>
     <string name="unit_code_name">Unit Code:</string>
     <string name="title_name">Title:</string>
     <string name="provider_name">Provider:</string>
@@ -30,5 +33,16 @@
     <string name="weighting_name">Weighting:</string>
     <string name="urgency_name">Urgency:</string>
     <string name="importance_name">Importance:</string>
+    <string name="high_name">High</string>
+    <string name="low_name">Low</string>
+    <string name="comments_name">Comments...</string>
+    <string name="cancel_name">Cancel</string>
+    <string name="add_name">Add</string>
+
+    <!--MANAGE TASKS STRINGS-->
+    <string name="manage_title">UTas S.T.M. - Manage Tasks</string>
+
+    <!--QUESTIONNAIRE STRINGS-->
+    <string name="questionnaire_title">UTas S.T.M. - Questionnaire</string>
 
 </resources>

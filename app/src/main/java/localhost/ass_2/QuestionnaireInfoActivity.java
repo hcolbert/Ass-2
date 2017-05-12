@@ -6,18 +6,18 @@ import android.os.Bundle;
 //import android.util.Log;
 import android.view.View;
 
-public class Questionnaire extends AppCompatActivity {
+public class QuestionnaireInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questionnaire);
+        setContentView(R.layout.activity_questionnaire_info);
         //String testString = stmDB.getQuestion(1,1);
         //Log.d("DBTest", testString);
     }
 
     public void goToQuizSection1(View view){
-        Intent intent = new Intent(this, quiz_section_1.class);
+        Intent intent = new Intent(this, QuestionnaireActivity.class);
         startActivity(intent);
     }
 

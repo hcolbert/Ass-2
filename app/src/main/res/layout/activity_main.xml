@@ -1,66 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
     tools:context="localhost.ass_2.MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
+    <GridLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="-138dp"
-        android:onClick="addTask"
-        android:text="@string/add_task"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/manage_tasks"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        <Button
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:id="@+id/addTaskButton"
+            android:onClick="addTask"
+            android:text="@string/add_task_name" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:onClick="takeQuiz"
-        android:text="@string/time_management_questionnaire"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        <Button
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="2"/>
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/time_management_resources"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/centre_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        <Button
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:id="@+id/manageTasksButton"
+            android:onClick="manageTasks"
+            android:text="@string/manage_tasks_name" />
 
-    <android.support.constraint.Guideline
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/centre_guideline"
-        app:layout_constraintGuide_begin="192dp"
-        android:orientation="vertical" />
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"/>
+
+        <Button
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:id="@+id/takeQuizButton"
+            android:onClick="takeQuiz"
+            android:text="@string/questionnaire_name" />
+
+        <Button
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnWeight="1"/>
+
+    </GridLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:isScrollContainer="true">
+
+    </ListView>
+
+</android.support.v7.widget.LinearLayoutCompat>

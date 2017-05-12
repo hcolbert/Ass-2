@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
     public DbHelper stmDB;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState)
+    {
         // instantiate the database
         stmDB = new DbHelper(this);
         // use only to insert new or changed data - requires database version to be incremented
@@ -30,13 +30,21 @@ public class MainActivity extends AppCompatActivity {
     // call the add task activity
     public void addTask(View view)
     {
-        Intent intent = new Intent(this, AddTask.class);
+        Intent intent = new Intent(this, AddTaskActivity.class);
+        startActivity(intent);
+    }
+
+    // call the manage tasks activity
+    public void manageTasks(View view)
+    {
+        Intent intent = new Intent(this,ManageTasksActivity.class);
         startActivity(intent);
     }
 
     // call the quiz activity
-    public void takeQuiz(View view){
-        Intent intent = new Intent(this,Questionnaire.class);
+    public void takeQuiz(View view)
+    {
+        Intent intent = new Intent(this,QuestionnaireInfoActivity.class);
         startActivity(intent);
     }
 }
