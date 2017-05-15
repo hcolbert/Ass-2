@@ -28,8 +28,15 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String t2column5 = "SECTION2";
     public static final String t2column6 = "SECTION3";
 
-
-
+    public static final String table3Name = "tasks";
+    public static final String t3column1 = "_id";
+    public static final String t3column2 = "TITLE";
+    public static final String t3column3 = "PROVIDER";
+    public static final String t3column4 = "DUEDATE";
+    public static final String t3column5 = "ASSESSWEIGHT";
+    public static final String t3column6 = "IMPORTANCE";
+    public static final String t3column7 = "URGENCY";
+    public static final String t3column8 = "STATUS";
 
     public DbHelper(Context context) {
         super(context, table1Name, null, db1Ver);
@@ -51,12 +58,25 @@ public class DbHelper extends SQLiteOpenHelper {
         createDB = "create table " + table2Name + " ("
                 + t2column1 + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + t2column2 + " INTEGER, "
-                + t2column3 + " INTEGER, "
+                + t2column3 + " STRING, "
                 + t2column4 + " INTEGER"
                 + t2column5 + " INTEGER"
                 + t2column6 + " INTEGER"
                 + ")";
         db.execSQL(createDB);
+
+        createDB = "create table " + table3Name + " ("
+                + t3column1 + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + t3column2 + " STRING, "
+                + t3column3 + " STRING, "
+                + t3column4 + " INTEGER"
+                + t3column5 + " INTEGER"
+                + t3column6 + " INTEGER"
+                + t3column7 + " INTEGER"
+                + t3column8 + " INTEGER"
+                + ")";
+        db.execSQL(createDB);
+
     }
 
     public void insertData(){
@@ -172,5 +192,143 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return dbCursor.getCount();
     }
+
+    //***********************************************
+    //***  Insert method for database table TASKS ***
+    //***********************************************
+
+    public long addTask(String newTitle , String newProvider , int newDueDate , int newAssessWeight, int newImportance, int newUrgency, int newStatus){
+        long insertResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column2, newTitle);
+        content.put(t3column3, newProvider);
+        content.put(t3column4, newDueDate);
+        content.put(t3column5, newAssessWeight);
+        content.put(t3column6, newImportance);
+        content.put(t3column7, newUrgency);
+        content.put(t3column8, newStatus);
+
+        insertResult = db.insert(table3Name, null, content);
+        db.close();
+
+        return insertResult;
+    }
+
+    //************************************************
+    //***  Update methods for database table TASKS ***
+    //************************************************
+
+    public long setTitle(int taskID, String newTitle) {
+        long updateResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column2, newTitle);
+        condition = "_id=" + taskID;
+
+        db.update(table3Name, content, condition, null);
+        updateResult = db.insert(table3Name, null, content);
+        db.close();
+        return updateResult;
+    }
+
+    public long setProvider(int taskID, String newProvider) {
+        long updateResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column3, newProvider);
+        condition = "_id=" + taskID;
+
+        db.update(table3Name, content, condition, null);
+        updateResult = db.insert(table3Name, null, content);
+        db.close();
+        return updateResult;
+    }
+
+    public long setDueDate(int taskID, int newDueDate) {
+        long updateResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column4, newDueDate);
+        condition = "_id=" + taskID;
+
+        db.update(table3Name, content, condition, null);
+        updateResult = db.insert(table3Name, null, content);
+        db.close();
+        return updateResult;
+    }
+
+    public long setAssessWeight(int taskID, int newAssessWeight){
+        long updateResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column5, newAssessWeight);
+        condition = "_id=" + taskID;
+
+        db.update(table3Name, content, condition, null);
+        updateResult = db.insert(table3Name, null, content);
+        db.close();
+        return updateResult;
+    }
+
+    public long setImportance(int taskID, int newImportance){
+        long updateResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column6, newImportance);
+        condition = "_id=" + taskID;
+
+        db.update(table3Name, content, condition, null);
+        updateResult = db.insert(table3Name, null, content);
+        db.close();
+        return updateResult;
+    }
+
+    public long setUrgency(int taskID, int newUrgency){
+        long updateResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column7, newUrgency);
+        condition = "_id=" + taskID;
+
+        db.update(table3Name, content, condition, null);
+        updateResult = db.insert(table3Name, null, content);
+        db.close();
+        return updateResult;
+    }
+
+    public long setStatus(int taskID, int newStatus){
+        long updateResult;
+        String condition;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues content = new ContentValues();
+        content.put(t3column8, newStatus);
+        condition = "_id=" + taskID;
+
+        db.update(table3Name, content, condition, null);
+        updateResult = db.insert(table3Name, null, content);
+        db.close();
+        return updateResult;
+    }
+
+    //************************************************
+    //***  Get methods for database table TASKS ***
+    //************************************************
+
 
 }
