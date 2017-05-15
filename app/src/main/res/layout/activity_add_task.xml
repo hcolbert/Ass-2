@@ -1,9 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="localhost.ass_2.addTask">
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    tools:context="localhost.ass_2.AddTaskActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <GridLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--UNIT CODE ROW-->
+        <TextView
+            android:layout_gravity="center|left"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="4"
+            android:text="@string/unit_code_name"/>
+
+        <EditText
+            android:id="@+id/unitCodeField"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"/>
+
+        <!--TITLE ROW-->
+        <TextView
+            android:layout_gravity="center|left"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="@string/title_name"
+            android:layout_columnWeight="1"/>
+
+        <EditText
+            android:id="@+id/titleField"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="2"/>
+
+        <!--PROVIDER ROW-->
+        <TextView
+            android:layout_gravity="center|left"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="@string/provider_name"
+            android:layout_columnWeight="1"/>
+
+        <Spinner
+            android:id="@+id/providerField"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnWeight="2"/>
+
+        <!--DUE DATE ROW-->
+        <TextView
+            android:layout_gravity="center|left"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:text="@string/due_date_name"
+            android:layout_columnWeight="1"/>
+
+        <LinearLayout
+            android:layout_gravity="right"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/dateDayField"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:hint="D"/>
+            <EditText
+                android:id="@+id/dateMonthField"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:hint="M"/>
+            <EditText
+                android:id="@+id/dateYearField"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:hint="Y"/>
+
+        </LinearLayout>
+
+        <!--ASSIGNMENT WEIGHT ROW-->
+        <TextView
+            android:layout_gravity="center|left"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:text="@string/weighting_name"
+            android:layout_columnWeight="1"/>
+
+        <EditText
+            android:id="@+id/weightingField"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_columnWeight="2"/>
+
+        <!--IMPORTANCE ROW-->
+        <TextView
+            android:layout_gravity="center|left"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:text="@string/importance_name"
+            android:layout_columnWeight="1"/>
+
+        <RadioGroup
+            android:id="@+id/importanceGroup"
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:layout_columnWeight="2">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/low_name"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/high_name"/>
+
+        </RadioGroup>
+
+        <!--URGENCY ROW-->
+        <TextView
+            android:id="@+id/urgencyGroup"
+            android:layout_gravity="center|left"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:text="@string/urgency_name"
+            android:layout_columnWeight="1"/>
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_columnWeight="2">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/low_name"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/high_name"/>
+
+        </RadioGroup>
+
+    </GridLayout>
+
+    <EditText
+        android:id="@+id/commentsField"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:gravity="start"
+        android:hint="@string/comments_name"/>
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="cancelTask"
+            android:text="@string/cancel_name" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="addTask"
+            android:text="@string/add_name" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.LinearLayoutCompat>
