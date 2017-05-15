@@ -21,6 +21,7 @@ public class AddTaskActivity extends AppCompatActivity
         //scrape all of the data
 
         Log.d("", "TASK HAS BEEN ADDED");
+        Log.d("","test");
     }
 
     // add the new task to the database
